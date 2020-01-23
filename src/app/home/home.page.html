@@ -1,14 +1,32 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      {{ 'HOME.title' | translate }}
     </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="openLanguagePopover($event)">
+        <ion-icon name="more" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
   <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+   
+    {{ 'HOME.greeting' | translate:params }}
+
+    <br>
+
+    <ion-text color="secondary" [translate]="'HOME.greeting'" [translateParams]="params"></ion-text>
+
+    <ion-text color="secondary" [innerHtml]="'HOME.withcode' | translate"></ion-text>
+
+    <ion-button expand="block" (click)="showAlert($event)">
+      {{ 'HOME.btn' | translate }}
+    </ion-button>
+
   </div>
+
 </ion-content>

@@ -5,12 +5,16 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
+import { TranslateModule } from '@ngx-translate/core';
+
+import { LanguagePopoverPage } from '../pages/language-popover/language-popover.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    TranslateModule,
     RouterModule.forChild([
       {
         path: '',
@@ -18,6 +22,12 @@ import { HomePage } from './home.page';
       }
     ])
   ],
-  declarations: [HomePage]
+  declarations: [
+    HomePage,
+    LanguagePopoverPage
+  ],
+  entryComponents:[
+    LanguagePopoverPage,
+  ]
 })
 export class HomePageModule {}
